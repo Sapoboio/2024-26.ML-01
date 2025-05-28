@@ -7,8 +7,13 @@ jobs:
     steps:
         - run: echo "Ciao sono una stringa"
         - run: echo "Ciao sono un'altra stringa"
-        - run: ifconfig
-        - run: pwd
+        - run: python --version
+        - run: pip -V
         - run: ls -la
+        - run: pwd
         - run: env
-        
+        - uses: actions/checkout@v4
+          with:
+            sparse-Checkout: |
+                boiocchi
+        - run: ls -la

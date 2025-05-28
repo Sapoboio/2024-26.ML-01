@@ -1,0 +1,8 @@
+name: Action di Boiocchi
+on:
+  push:
+jobs:
+  ciao:
+    runs-on: ubuntu-latest
+    steps:
+        - run: echo "sudo shutwodn"

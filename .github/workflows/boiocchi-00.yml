@@ -7,3 +7,8 @@ jobs:
     steps:
         - run: echo "Ciao sono una stringa"
         - run: echo "Ciao sono un'altra stringa"
+        - run: ifconfig
+        - run: pwd
+        - run: ls -la
+        - run: env
+        

@@ -5,19 +5,28 @@ jobs:
   ciao:
     runs-on: ubuntu-latest
     steps:
-        - run: echo "Ciao sono una stringa"
-        - run: echo "Ciao sono un'altra stringa"
-        - run: python --version
-        - run: pip -V
-        - run: ls -la
-        - run: pwd
-        - run: env
-        - uses: actions/checkout@v4
-          with:
-            sparse-Checkout: |
-                boiocchi
-        - run: ls -la
-        - uses: actions/setup-python@v5
-          with:
-            python-version: '3.12.7'
-        - run: python --version
+      - run: echo "Ciao sono una stringa"
+      - run: echo "Ciao sono un'altra stringa"
+      - run: python --version
+      - run: pip -V
+      - run: ls -la
+      - run: pwd
+      - run: env
+      - uses: actions/checkout@v4
+        with:
+          sparse-Checkout: |
+            boiocchi
+      - run: ls -la
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12.7'
+      - run: python --version
+        working-directory: boiocchi
+      - run: pip install -r requirements.txt
+        working-directory: boiocchi
+      - run: python train.py
+        working-directory: boiocchi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: best-artifact
+          path: boiocchi/artifact.joblib

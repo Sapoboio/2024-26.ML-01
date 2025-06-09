@@ -10,7 +10,8 @@ from joblib import dump
 
 
 
-df = pd.read_csv('Salary_Data.csv')
+csv_path = os.path.join(os.path.dirname(__file__), 'Salary_Data.csv')
+df = pd.read_csv(csv_path)
 df[df.isnull().any(axis=1)]
 df.dropna(inplace=True)
 from sklearn.model_selection import train_test_split

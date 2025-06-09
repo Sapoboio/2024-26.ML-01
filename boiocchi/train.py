@@ -9,7 +9,7 @@ from sklearn.metrics import mean_absolute_error, mean_absolute_percentage_error,
 
 
 
-df = pd.read_csv('Salary Data.csv')
+df = pd.read_csv('Salary_Data.csv')
 df[df.isnull().any(axis=1)]
 df.dropna(inplace=True)
 from sklearn.model_selection import train_test_split
